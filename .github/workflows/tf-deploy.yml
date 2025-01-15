@@ -52,4 +52,4 @@ jobs:
       - name: Terraform apply
         shell: bash
         working-directory: ./infrastructure/terraform/environments/test
-        run: terraform apply tfplan -auto-approve
+        run: terraform apply -auto-approve tfplan
