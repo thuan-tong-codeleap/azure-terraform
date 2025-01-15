@@ -12,6 +12,7 @@ module "storage_account" {
   common_tags = var.common_tags
   account_tier = "Standard"
   account_replication_type = "LRS"
+  depends_on = [ azurerm_resource_group.rg ]
 }
 
 module "webapp" {
@@ -22,4 +23,5 @@ module "webapp" {
   common_tags = var.common_tags
   os = "Linux"
   sku = "B1"
+  depends_on = [ azurerm_resource_group.rg ]
 }

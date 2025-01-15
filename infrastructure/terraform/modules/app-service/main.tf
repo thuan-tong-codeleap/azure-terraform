@@ -14,4 +14,5 @@ resource "azurerm_linux_web_app" "webapp" {
   service_plan_id = azurerm_service_plan.service_plan.id
   site_config {}
   tags = var.common_tags
+  depends_on = [ azurerm_service_plan.service_plan ]
 }
