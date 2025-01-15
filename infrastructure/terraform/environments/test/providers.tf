@@ -1,7 +1,6 @@
 provider "azurerm" {
-  features {
-    
-  }
+  features {}
+  use_oidc = true
 }
 
 terraform {
@@ -10,5 +9,12 @@ terraform {
         source = "hashicorp/azurerm"
         version = "~>4.0"
     }
+  }
+  backend "azurerm" {
+    resource_group_name = "thuan-tfstate-rg"
+    storage_account_name = "thuantfstate1945"
+    container_name = "terraform-backend"
+    key = "test-env.tfstate"
+    use_oidc = true
   }
 }
