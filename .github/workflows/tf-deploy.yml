@@ -34,6 +34,10 @@ jobs:
           tenant-id: ${{ env.ARM_TENANT_ID }}
           subscription-id: ${{ env.ARM_SUBSCRIPTION_ID }}
 
+      - name: Export Terraform variables to terraform.tfvars
+        run: |
+          echo '${{ vars.TF_VARS }}' >> terraform.tfvars
+
       - name: Terraform init
         shell: bash
         working-directory: ./infrastructure/terraform/environments/test
