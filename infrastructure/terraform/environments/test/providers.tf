@@ -12,7 +12,7 @@ terraform {
   }
   backend "azurerm" {
     resource_group_name = "thuan-tfstate-rg"
-    storage_account_name = "thuantfstate1945"
+    storage_account_name = "thuantfstate1946"
     container_name = "terraform-backend"
     key = "test-env.tfstate"
     use_oidc = true
