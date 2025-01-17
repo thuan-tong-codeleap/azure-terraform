@@ -20,6 +20,7 @@ jobs:
       - name: Run Terraform validate, plan and apply
         uses: ./.github/terraform-infrastructure/
         with:
+          environment: "test"
           tf-vars: ${{ vars.TF_VARS }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
